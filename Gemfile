@@ -37,7 +37,8 @@ gem 'jwt'
 
 # webpacker for react
 gem 'webpacker-react', "~> 0.3.2"
-
+# Add faker gem
+gem 'faker', :git => 'git://github.com/stympy/faker.git', :branch => 'master'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

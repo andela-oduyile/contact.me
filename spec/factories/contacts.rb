@@ -1,12 +1,14 @@
 FactoryGirl.define do
   factory :contact do
-    first_name "MyString"
-    last_name "MyString"
-    email "MyString"
-    company "MyString"
-    job_title "MyString"
+    first_name { Faker::Name.first_name }
+    last_name { Faker::Name.last_name }
+    email { Faker::Internet.email }
+    company { Faker::Company.name }
+    job_title { Faker::Job.title }
     date_of_birth "2017-10-16"
-    address "MyString"
-    user nil
+    address { Faker::Address.street_address }
+    after(:build) do |contact|
+      contact.user = create(:contact)
+    end
   end
 end
